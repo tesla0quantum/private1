@@ -1,0 +1,48 @@
+-- Create User
+useradd <username>
+passwd <username>
+sudo adduser <username>
+
+-- Granting Sudo Privileges to a User
+gpasswd -a username wheel
+sudo gpasswd -a username wheel
+sudo some_command
+
+-- Managing Users with Sudo Privileges
+sudo lid -g wheel
+
+-- Deleting Users
+userdel username
+
+root:
+userdel -r username
+
+-- Grant Root Privileges to the User
+visudo
+
+## Allow root to run any commands anywhere
+ root ALL=(ALL) ALL
+
+mynewuser ALL=(ALL) ALL
+
+-- Adding a Group
+groupadd <group-name>
+
+-- Add a new user to secondary group
+useradd -G {group-name} username
+
+# grep developers /etc/group
+
+# grep ^vivek /etc/passwd
+
+# useradd -G developers vivek
+
+# passwd vivek
+
+# id vivek
+
+-----------------------------------------------------------------------
+chmod
+getfacl
+setfacl
+usermod

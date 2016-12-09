@@ -1,0 +1,20 @@
+************************
+iSCSI Configuration Help
+************************
+
+
+Create Centralized Secure Storage using iSCSI Target on RHEL/CentOS/Fedora Part -I
+===============================================================================================
+http://www.tecmint.com/create-centralized-secure-storage-using-iscsi-targetin-linux/
+
+How to Create and Setup LUNs using LVM in “iSCSI Target Server” on RHEL/CentOS/Fedora – Part II
+===============================================================================================
+http://www.tecmint.com/create-luns-using-lvm-in-iscsi-target/
+
+Centralized Secure Storage (iSCSI) – “Initiator Client” Setup on RHEL/CentOS/Fedora – Part III
+===============================================================================================
+http://www.tecmint.com/iscsi-initiator-client-setup/
+
+Other Help
+==========
+https://www.server-world.info/en/note?os=CentOS_6&p=iscsi&f=2

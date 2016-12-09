@@ -1,0 +1,41 @@
+SERVER2
+----------------
+yum -y install iscsi*
+chkconfig --add iscsi
+chkconfig iscsi on
+iscsiadm -m node -l
+iscsiadm -m session
+iscsiadm -m node -u
+ls /dev/mapper/*
+
+nano /etc/tgt/targets.conf
+
+/etc/init.d/tgtd start
+
+chkconfig --levels 235 tgtd on
+
+nano /etc/sysconfig/iptables
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 3260 -j ACCEPT
+
+service iptables restart
+
+tdtadm --mode target --op show
+
+SERVER1
+---------------------------
+
+iqn.2016-11.com.store:server2.iscsi1
+
+nano /etc/iscsi/initiatorname.iscsi
+nano /etc/iscsi/iscsid.conf
+
+/etc/init.d/iscsid start
+chkconfig --levels 235 iscsid on
+
+iscsiadm --mode discovery -t sendtargets --portal 10.10.10.2
+
+http://opentodo.net/2012/10/setup-iscsi-target-initiator-on-centos-6/
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/ch-iscsi.html
+https://www.server-world.info/en/note?os=CentOS_6&p=iscsi
+http://www.linux.org/threads/iscsi-storage-configuration-using-iscsiadm-command.4241/
+http://opentodo.net/2012/10/setup-iscsi-target-initiator-on-centos-6/
